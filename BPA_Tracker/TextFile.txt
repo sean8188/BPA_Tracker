@@ -1,0 +1,13 @@
+﻿-------------------------------------------------------------
+Error: "needs migrations value cannot be null 
+	    parameter name: connectionstring"
+To get this to work:
+
+I had to start with 2.0 not 2.2
+created a new project, added the models: AssignEvents, Event, Student
+Added "/Students/Index" to _Layout
+
+Solution:  Had to add -Context BPA_TrackerContext and have both contexts uncommented in the appsettings file
+----------------------------------------------------------------
+
+

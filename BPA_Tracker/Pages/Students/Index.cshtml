@@ -1,0 +1,122 @@
+﻿@page "{id:int?}"
+@model BPA_Tracker.Pages.Students.IndexModel
+@{
+    ViewData["Title"] = "Students";
+}
+<h2>Students</h2>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                LastName
+            </th>
+            <th>
+                FirstName
+            </th>
+            <th>
+                StudentPhone
+            </th>
+            <th>
+                StudentEmail
+            </th>
+            <th>
+                ParentName
+            </th>
+            <th>
+                ParentPhone
+            </th>
+            <th>
+                ParentEmail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Student.Students)
+        {
+            string selectedRow = "";
+            if (item.StudentID == Model.StudentID)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParentPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParentEmail)
+                </td>
+                <td>
+                    @{
+                        foreach (var course in item.AssignEvents)
+                        {
+                            @course.EventID @:  @course.Event <br />
+                        }
+                    }
+                </td>
+                <td>
+                    <a asp-page="./Index" asp-route-id="@item.StudentID">Select</a> |
+
+                    <a asp-page="./Edit" asp-route-id="@item.StudentID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.StudentID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.StudentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.Student.Events != null)
+{
+    <h3>Events Selected by Selected Student</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Event Name</th>
+            <th>Event Date/Time</th>
+            <th>Location</th>
+        </tr>
+
+        @foreach (var item in Model.Student.Events)
+        {
+            string selectedRow = "";
+            if (item.EventID == Model.EventID)
+            {
+                selectedRow = "success";
+            }
+        <tr class="@selectedRow">
+            <td>
+                <a asp-page="./Index" asp-route-courseID="@item.EventID">Select</a>
+            </td>
+            <td>
+                @item.EventName
+            </td>
+            <td>
+                @item.DateTime
+            </td>
+            <td>
+                @item.Location  
+            </td>
+        </tr>
+        }
+
+    </table>
+}
