@@ -64,14 +64,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ParentEmail)
                 </td>
-                <td>
-                    @{
-                        foreach (var course in item.AssignEvents)
-                        {
-                            @course.EventID @:  @course.Event <br />
-                        }
-                    }
-                </td>
+               
                 <td>
                     <a asp-page="./Index" asp-route-id="@item.StudentID">Select</a> |
 

@@ -9,7 +9,7 @@ using BPA_Tracker.Models;
 
 namespace BPA_Tracker.Pages.Students
 {
-    public class CreateModel : EventNamePageModel  // Changed from PageModel
+    public class CreateModel : StudentEventsPageModel // Changed from PageModel
     {
         private readonly BPA_Tracker.Models.BPA_TrackerContext _context;
 
@@ -21,43 +21,53 @@ namespace BPA_Tracker.Pages.Students
         public IActionResult OnGet()
         {
             //LINE BELOW IS NEW
-            PopulateEventsDropDownList(_context);
+
+            var student = new Student();
+            student.AssignEvents = new List<AssignEvent>();
+
+            PopulateAssignedEventData(_context, student);
+            //PopulateEventsDropDownList(_context);
             return Page();
         }
 
         [BindProperty]
         public Student Student { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string[] selectedCourses)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            //LINSE BELOW IS NEW*********************************************
-            var emptyCourse = new Student();
+            var newStudent = new Student();
+            if (selectedCourses != null)
+            {
+                newStudent.AssignEvents = new List<AssignEvent>();
+                foreach (var course in selectedCourses)
+                {
+                    var coursetoadd = new AssignEvent
+                    {
+                        EventID = int.Parse(course)
+                    };
+                    newStudent.AssignEvents.Add(coursetoadd);
+                }
+            }
 
             if (await TryUpdateModelAsync<Student>(
-                 emptyCourse,
-                 "student",   // Prefix for form value.
-                 s => s.StudentID, s => s.LastName, s => s.FirstName, s => s.StudentPhone, s => s.StudentEmail, s => s.ParentName, s => s.ParentPhone, s => s.ParentEmail))
+                newStudent,
+                "Student",
+                i => i.FirstName, i => i.LastName,
+                i => i.StudentPhone, i => i.StudentEmail,
+                i => i.ParentName, i => i.ParentPhone,
+                i => i.ParentEmail))
             {
-                _context.Student.Add(emptyCourse);
+                _context.Student.Add(newStudent);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }
-
-            // Select DepartmentID if TryUpdateModelAsync fails.
-            PopulateEventsDropDownList(_context, emptyCourse.StudentID);
+            PopulateAssignedEventData(_context, newStudent);
             return Page();
-
-            //************************************LINES ABOVE IS NEW
-
-            //_context.Student.Add(Student);
-            //await _context.SaveChangesAsync();
-
-            //return RedirectToPage("./Index");
         }
     }
 }
