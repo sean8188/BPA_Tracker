@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BPA_Tracker"
+    "\\BPA_Tracker",
+    "\\BPA_Tracker\\Pages"
   ],
   "SelectedNode": "\\BPA_Tracker\\BPA_Tracker.sln",
   "PreviewInSolutionExplorer": false
