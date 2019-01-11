@@ -13391,23 +13391,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PS19SArnold\\.nuget\\packages\\": {},
+    "C:\\Users\\PS19JMcDonald\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\BPA_Tracker\\BPA_Tracker.csproj",
+      "projectUniqueName": "P:\\BPA_Tracker_Github\\BPA_Tracker\\BPA_Tracker.csproj",
       "projectName": "BPA_Tracker",
-      "projectPath": "P:\\BPA_Tracker\\BPA_Tracker.csproj",
-      "packagesPath": "C:\\Users\\PS19SArnold\\.nuget\\packages\\",
-      "outputPath": "P:\\BPA_Tracker\\obj\\",
+      "projectPath": "P:\\BPA_Tracker_Github\\BPA_Tracker\\BPA_Tracker.csproj",
+      "packagesPath": "C:\\Users\\PS19JMcDonald\\.nuget\\packages\\",
+      "outputPath": "P:\\BPA_Tracker_Github\\BPA_Tracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\PS19SArnold\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PS19JMcDonald\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
