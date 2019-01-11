@@ -84,3 +84,15 @@ P:\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.AssemblyIn
 P:\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.AssemblyInfo.cs
 P:\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.dll
 P:\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.pdb
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.dll
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.pdb
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\bin\Debug\netcoreapp2.0\BPA_Tracker.deps.json
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\bin\Debug\netcoreapp2.0\BPA_Tracker.runtimeconfig.json
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\bin\Debug\netcoreapp2.0\BPA_Tracker.runtimeconfig.dev.json
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\bin\Debug\netcoreapp2.0\BPA_Tracker.dll
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\bin\Debug\netcoreapp2.0\BPA_Tracker.pdb
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.csprojAssemblyReference.cache
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.csproj.CoreCompileInputs.cache
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.AssemblyInfoInputs.cache
+P:\JAVA\BPA_Tracker_Github\BPA_Tracker\obj\Debug\netcoreapp2.0\BPA_Tracker.AssemblyInfo.cs
