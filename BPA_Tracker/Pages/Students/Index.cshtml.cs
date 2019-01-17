@@ -24,6 +24,13 @@ namespace BPA_Tracker.Pages.Students
         public int StudentID { get; set; }
         public int EventID { get; set; }
 
+
+        //Added search fields
+        [BindProperty(SupportsGet = true)]
+
+        public string SearchString { get; set; }
+
+
         public async Task OnGetAsync(int? id, int? EventID)
         {
             Student = new StudentIndexData();
@@ -33,6 +40,18 @@ namespace BPA_Tracker.Pages.Students
                   .AsNoTracking()
                   .OrderBy(i => i.LastName)
                   .ToListAsync();
+            /////////////////////////////////////////////////////
+            //added code for searching
+            var SearchStudent = from m in _context.Student
+                                select m;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                Student.Students = SearchStudent.Where(s => s.LastName.Contains(SearchString));
+
+            }
+
+            /////////////////////////////////////////////////////
+
 
             if (id != null)
             {
