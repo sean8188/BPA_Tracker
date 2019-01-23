@@ -41,7 +41,7 @@ namespace BPA_Tracker.Pages.Students
                   .OrderBy(i => i.LastName)
                   .ToListAsync();
             /////////////////////////////////////////////////////
-            //added code for searching
+            //Added code for searching by last name.
             var SearchStudent = from m in _context.Student
                                 select m;
             if (!string.IsNullOrEmpty(SearchString))
