@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BPA_Tracker.Models;
 using BPA_Tracker.Models.SchoolViewModels;  // Add VM
+using Microsoft.AspNetCore.Authorization;
 
 namespace BPA_Tracker.Pages.Students
 {
+    [Authorize]
+    
     public class IndexModel : PageModel
     {
         private readonly BPA_Tracker.Models.BPA_TrackerContext _context;
