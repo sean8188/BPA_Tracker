@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace BPA_Tracker.Pages.Events
 {
     [Authorize]
+
     public class DeleteModel : PageModel
     {   
         private readonly BPA_Tracker.Models.BPA_TrackerContext _context;

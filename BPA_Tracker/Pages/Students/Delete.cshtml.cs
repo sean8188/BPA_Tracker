@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BPA_Tracker.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BPA_Tracker.Pages.Students
 {
+    [Authorize]
+
     public class DeleteModel : PageModel
     {
         private readonly BPA_Tracker.Models.BPA_TrackerContext _context;
